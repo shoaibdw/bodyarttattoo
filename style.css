@@ -1,0 +1,473 @@
+:root {
+    --nav-height: 80px;
+  }
+  
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Arial', sans-serif;
+  }
+  
+  body {
+    margin: 0;
+    padding-top: var(--nav-height); /* navbar height */
+    background-color: #000;
+    -webkit-font-smoothing: antialiased;
+    text-rendering: optimizeLegibility;
+  }
+  
+  
+
+  .navbar a {
+    transition: opacity 0.3s ease, border-bottom 0.3s ease;
+  }
+  
+  .navbar a.active {
+    border-bottom: 2px solid white;
+  }
+    
+  /* HERO */
+  .hero {
+    margin-top: calc(-1 * var(--nav-height));
+    position: relative;
+    height: 100vh;
+    padding: 0;
+    background-image: url("assets/images/hero.jpg");
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    overflow: hidden;
+  }
+  
+
+  .hero p {
+    margin-top: 10px;
+    font-size: 1.2rem;
+    opacity: 0.8;
+    letter-spacing: 1px;
+  }
+  
+  
+
+  .hero h1 {
+    font-size: 4rem;
+    letter-spacing: 3px;
+    text-transform: uppercase;
+    font-weight: 700;
+  }
+  
+  
+  
+  /* SECTIONS */
+  section {
+    scroll-margin-top: 90px;
+    padding: 120px 80px;
+  }
+
+  section:not(.hero):not(.page-hero)::before {
+    content: "";
+    display: block;
+    width: 60px;
+    height: 2px;
+    background: rgba(255,255,255,0.15);
+    margin-bottom: 40px;
+  }
+  
+  
+  
+  
+  .about h2 {
+    font-size: 3rem;
+    margin-bottom: 20px;
+  }
+  
+  /* SERVICES */
+  .services {
+    background: #4dbaa1;
+    display: flex;
+    justify-content: space-between;
+  }
+  
+  .card {
+    width: 30%;
+    padding: 60px 20px;
+    border: 1px solid #fffafa;
+    text-align: center;
+    font-size: 1.8rem;
+    color: #fff;
+    cursor: pointer;
+  
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+  
+    position: relative;
+    transition: transform 0.4s ease;
+  }
+  
+  /* Dark overlay for readability */
+  .card::before {
+    content: "";
+    position: absolute;
+    inset: 0;
+    background: rgba(0, 0, 0, 0.55);
+  }
+  
+  .card:hover {
+    transform: translateY(-10px);
+  }
+  
+  .card > * {
+    position: relative;
+    z-index: 1;
+  }
+  .card.tattoo {
+    background-image: url("assets/images/tatto-bg.jpg");
+  }
+  
+  .card.piercing {
+    background-image: url("assets/images/protrait-bg.jpg");
+  }
+  
+  .card.design {
+    background-image: url("assets/images/design-bg.png");
+  } 
+  
+  .card.nail {
+    background-image: url();
+  }
+
+  html {
+    scroll-behavior: smooth;
+  }
+
+
+  
+  .hero-content {
+    position: relative;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    color: white;
+  }
+  .page-hero {
+    margin-top: -80px;
+    height: 60vh;
+    background: url("assets/images/about-bg.jpg") center/cover no-repeat;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+  
+    
+
+  .hero::after {
+    content: "";
+    position: absolute;
+    inset: 0;
+    background: rgba(0, 0, 0, 0.23);
+  }
+  
+  
+  .page-hero h1 {
+    font-size: 4rem;
+    letter-spacing: 3px;
+  }
+  
+  .service-list {
+    padding: 100px 80px;
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 40px;
+  }
+  
+  .service-list {
+  padding: 80px 0;
+  overflow: hidden;
+}
+
+/* wrapper for animation */
+.service-track {
+  display: flex;
+  gap: 30px;
+  width: max-content;
+  animation: scroll-left 20s linear infinite;
+}
+
+/* vertical stack */
+.service-column {
+  display: flex;
+  flex-direction: column;
+  gap: 100px;
+  margin-right: 80px; /* space between repeating columns */
+}
+
+/* ONE VERTICAL CARD */
+.service-box {
+  width: 300px;
+  height: 480px;
+  border-radius: 20px;
+  overflow: hidden;
+  background: #b84040;
+  flex-shrink: 0;
+  position: relative;
+}
+/* IMAGE */
+.service-box img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+/* NAME / TEXT */
+.service-box .label {
+  position: absolute;
+  bottom: 20px;
+  left: 0;
+  right: 0;
+  text-align: center;
+  font-weight: bold;
+  letter-spacing: 1px;
+  color: #fff;
+}
+
+/* animation */
+@keyframes moveLeft {
+  from {
+    transform: translateX(100%);
+  }
+  to {
+    transform: translateX(-100%);
+  }
+}
+.service-box:hover {
+  transform: scale(1.05);
+}
+.service-track:hover {
+  animation-play-state: paused;
+}
+
+/* animation */
+@keyframes scroll-left {
+  from {
+    transform: translateX(100%);
+  }
+  to {
+    transform: translateX(-100%);
+  }
+}
+
+  
+  .navbar {
+  position: fixed;
+  top: 0;
+  width: 100%;
+  padding: 20px 60px;
+  display: flex;
+  gap: 30px;
+  background: rgba(0,0,0,0.6);
+  backdrop-filter: blur(8px);
+  z-index: 1000;
+}
+
+.navbar a {
+  color: white;
+  text-decoration: none;
+  letter-spacing: 1px;
+  font-size: 0.9rem;
+}
+
+.navbar a:hover {
+  opacity: 0.7;
+}
+
+.about {
+    position: relative;
+    background: url("assets/images/about-bg.jpg") center/cover no-repeat;
+    color: white;
+  }
+  
+  .about-overlay {
+    background: rgba(0, 0, 0, 0.23);
+    padding: 120px 80px;
+  }
+  
+  .about-content {
+    max-width: 500px;
+  }
+  
+  .about h2 {
+    font-size: 3rem;
+    margin-bottom: 30px;
+  }
+  
+  .p,about-points {
+    list-style: none;
+    padding: 0;
+  }
+  
+  .about-points li {
+    font-size: 1.4rem;
+    margin-bottom: 15px;
+    letter-spacing: 0.5px;
+  }
+  
+
+.services {
+  background: #91a1e3;
+}
+
+.galary {
+    background: #4dbaa1;
+}
+@media (max-width: 1024px) {
+
+    section {
+      padding: 100px 50px;
+    }
+  
+    .hero h1 {
+      font-size: 3.2rem;
+    }
+  
+    .services {
+      gap: 30px;
+    }
+  
+    .card {
+      font-size: 1.3rem;
+      padding: 50px 20px;
+    }
+  
+    .service-list {
+      grid-template-columns: repeat(2, 1fr);
+    }
+  }
+
+  @media (max-width: 768px) {
+     .service-box {
+    width: 220px;
+    height: 360px;
+  }
+    .card {
+        width: 100%;
+        margin-bottom: 20px;
+      }
+   
+     .hero-content {
+          justify-content: flex-start;   /* move content up */
+          padding-top: 150px;            /* space from top */
+        }
+
+      
+    /* NAVBAR */
+    .navbar {
+      padding: 15px 25px;
+      gap: 15px;
+      flex-wrap: wrap;
+      justify-content: center;
+    }
+  
+    .navbar a {
+      font-size: 0.85rem;
+    }
+  
+    body {
+      padding-top: 70px;
+    }
+  
+    /* HERO */
+    .hero {
+      margin-top: -70px;
+    }
+  
+    .hero h1 {
+      font-size: 2.5rem;
+      letter-spacing: 2px;
+    }
+  
+    .hero p {
+      font-size: 1rem;
+    }
+
+    .about-overlay {
+        padding: 80px 25px;
+      }
+    
+      .about h2 {
+        font-size: 2.2rem;
+      }
+    
+      .about-points li {
+        font-size: 1.1rem;
+      }
+  
+    /* SECTIONS */
+    section {
+      padding: 80px 25px;
+    }
+  
+    section:not(.hero)::before {
+      margin-bottom: 25px;
+    }
+  
+    /* SERVICES PREVIEW */
+    .services {
+        background: url("assets/images/services-bg.jpg") center/cover no-repeat;
+      flex-direction: column;
+      gap: 30px;
+    }
+  
+    .card {
+      width: 100%;
+    }
+  
+    /* PAGE HERO */
+    .page-hero {
+      height: 45vh;
+      margin-top: -70px;
+    }
+  
+    .page-hero h1 {
+      font-size: 2.5rem;
+    }
+  
+    /* SERVICE PAGE GRID */
+    .service-list {
+      grid-template-columns: 1fr;
+      padding: 80px 25px;
+    }
+  }
+  @media (max-width: 480px) {
+
+    .hero h1 {
+      font-size: 2rem;
+    }
+  
+    .hero p {
+      font-size: 0.95rem;
+    }
+  
+    .navbar a {
+      font-size: 0.8rem;
+    }
+  
+    .page-hero h1 {
+      font-size: 2rem;
+    }
+  
+    .card,
+    .service-box {
+      padding: 40px 20px;
+    }
+  }
+    
+
+
+  
+  
+  

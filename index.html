@@ -1,0 +1,134 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Alien Style Website</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <!-- CSS -->
+  <link rel="stylesheet" href="style.css">
+
+  <!-- AOS Animation Library -->
+  <link href="https://unpkg.com/aos@2.3.4/dist/aos.css" rel="stylesheet">
+</head>
+<script>
+    if (window.location.hash) {
+      window.location.hash = "#home";
+    }
+  </script>
+  
+<body>
+    <nav class="navbar">
+        <a href="#home" class="active">Home</a>
+        <a href="#about">About</a>
+        <a href="#services">Services</a>
+        <a href="#artists">Artists</a>
+        <a href="#gallery">Gallery</a>
+        <a href="#contact">Contact</a>
+      </nav>
+      
+
+  <!-- HERO SECTION -->
+  <section class="hero" id="home">
+    <div class="hero-content">
+      <h1>WE CREATE ART</h1>
+      <p>Not Just Tattoos.</p>
+      <p>Team of Best Artist In The Town</p>
+    </div>
+  </section>
+  
+
+  <!-- ABOUT SECTION -->
+  <section class="about" data-aos="fade-up" id="about">
+    <div class="about-overlay">
+    <div class="about-content">
+    <h2>About Us</h2>
+    <ul class="about-points">
+        <li>Redefining Tattoo Art in Jaipur 🎨</li>
+        <li>Jaipur’s Most Trusted Studio 🤝</li>
+        <li>Custom Designs for Every Soul 🖤</li>
+        <li>Home of Talented Artists 🏠</li>
+        <li>Book Your Session Now</li>
+      </ul>
+    </div>
+    </div>
+  </section>
+
+  <!-- SERVICES -->
+  <section class="services" data-aos="fade-up" id="services">
+    <h1>Our Services</h1>
+    <div class="card tattoo" data-aos="fade-right">Tattoo</div>
+    <div class="card piercing" data-aos="fade-up">Piercing</div>
+    <div class="card nail" data-aos="fade-right">Nails</div>
+  </section>
+
+  <section class="service-list" id="artists">
+  <div class="service-track">
+
+    <div class="service-box">
+      <img src="images/artist1.jpg">
+      <div class="label">IRONBUZZ</div>
+    </div>
+
+    <div class="service-box">
+      <img src="images/artist2.jpg">
+      <div class="label">IRONBUZZ</div>
+    </div>
+
+    <div class="service-box">
+      <img src="images/artist3.jpg">
+      <div class="label">IRONBUZZ</div>
+    </div>
+
+    <div class="service-box">
+      <img src="images/artist4.jpg">
+      <div class="label">IRONBUZZ</div>
+    </div>
+
+    <!-- DUPLICATE SAME CARDS FOR SMOOTH LOOP -->
+    <div class="service-box">
+      <img src="images/artist1.jpg">
+      <div class="label">IRONBUZZ</div>
+    </div>
+
+    <div class="service-box">
+      <img src="images/artist2.jpg">
+      <div class="label">IRONBUZZ</div>
+    </div>
+
+  </div>
+</section>
+
+<section class="service-list" id="gallery">
+  <div class="service-track">
+
+    <div class="service-column">
+      <div class="service-box">Artwork 1</div>
+      <div class="service-box">Artwork 2</div>
+      <div class="service-box">Artwork 3</div>
+    </div>
+
+    <div class="service-column">
+      <div class="service-box">Artwork 1</div>
+      <div class="service-box">Artwork 2</div>
+      <div class="service-box">Artwork 3</div>
+    </div>
+
+  </div>
+</section>
+
+  
+  <section class="about" id="contact">
+    <h2>Contact</h2>
+    <p>Email: contact@bodyarttattoo.com</p>
+    <p>Phone: +91 90000 00000</p>
+  </section>  
+
+
+
+  <!-- JS -->
+  <script src="script.js"></script>
+  <script src="https://unpkg.com/aos@2.3.4/dist/aos.js"></script>
+  <script src="https://unpkg.com/gsap@3/dist/gsap.min.js"></script>
+</body>
+</html>
