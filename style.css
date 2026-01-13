@@ -179,43 +179,31 @@
   }
   
   .service-list {
-    padding: 100px 80px;
-    display: grid;
-    grid-template-columns: repeat(3, 1fr);
-    gap: 40px;
-  }
-  
-  .service-list {
-  padding: 80px 0;
   overflow: hidden;
+  width: 100%;
 }
 
-/* wrapper for animation */
+/* TRACK */
 .service-track {
   display: flex;
-  gap: 30px;
   width: max-content;
-  animation: scroll-left 20s linear infinite;
+  will-change: transform;
+  animation: moveLeft 30s linear infinite;
+   backface-visibility: hidden;
 }
 
-/* vertical stack */
-.service-column {
-  display: flex;
-  flex-direction: column;
-  gap: 100px;
-  margin-right: 80px; /* space between repeating columns */
-}
-
-/* ONE VERTICAL CARD */
+/* CARD */
 .service-box {
   width: 300px;
   height: 480px;
+  flex-shrink: 0;
+  margin-right: 30px;
   border-radius: 20px;
   overflow: hidden;
-  background: #b84040;
-  flex-shrink: 0;
   position: relative;
+
 }
+
 /* IMAGE */
 .service-box img {
   width: 100%;
@@ -223,43 +211,24 @@
   object-fit: cover;
 }
 
-/* NAME / TEXT */
+/* TEXT */
 .service-box .label {
-  position: absolute;
   bottom: 20px;
-  left: 0;
-  right: 0;
+  width: 100%;
   text-align: center;
-  font-weight: bold;
-  letter-spacing: 1px;
-  color: #fff;
+  color: #ffffff;
 }
 
-/* animation */
+/* PERFECT LOOP */
 @keyframes moveLeft {
-  from {
-    transform: translateX(100%);
+  0% {
+    transform: translate3d(0, 0, 0);
   }
-  to {
-    transform: translateX(-100%);
+  100% {
+    transform: translate3d(-50%, 0, 0);
   }
-}
-.service-box:hover {
-  transform: scale(1.05);
-}
-.service-track:hover {
-  animation-play-state: paused;
 }
 
-/* animation */
-@keyframes scroll-left {
-  from {
-    transform: translateX(100%);
-  }
-  to {
-    transform: translateX(-100%);
-  }
-}
 
   
   .navbar {
@@ -349,10 +318,7 @@
   }
 
   @media (max-width: 768px) {
-     .service-box {
-    width: 220px;
-    height: 360px;
-  }
+  
     .card {
         width: 100%;
         margin-bottom: 20px;
@@ -435,12 +401,24 @@
     .page-hero h1 {
       font-size: 2.5rem;
     }
-  
-    /* SERVICE PAGE GRID */
-    .service-list {
-      grid-template-columns: 1fr;
-      padding: 80px 25px;
-    }
+   /* container padding */
+  .service-list {
+    padding: 40px 0;
+  }
+
+  /* card size */
+  .service-box {
+    width: 220px;
+    height: 340px;
+    margin-right: 16px;
+    border-radius: 16px;
+  }
+
+  /* text size */
+  .service-box .label {
+    font-size: 14px;
+    bottom: 12px;
+  }
   }
   @media (max-width: 480px) {
 
