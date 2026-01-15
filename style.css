@@ -1,12 +1,16 @@
 :root {
     --nav-height: 80px;
   }
+  h1, h2, h3,h4 {
+   font-family: 'Playfair Display', serif;
+  text-transform: uppercase;
+}
   
 * {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
-    font-family: 'Arial', sans-serif;
+    font-family: 'Inter', sans-serif;
   }
   
   body {
@@ -15,16 +19,22 @@
     background-color: #000;
     -webkit-font-smoothing: antialiased;
     text-rendering: optimizeLegibility;
+    font-family: 'Inter', sans-serif;
   }
   
   
 
   .navbar a {
     transition: opacity 0.3s ease, border-bottom 0.3s ease;
+  
   }
   
   .navbar a.active {
     border-bottom: 2px solid white;
+  }
+  .navbar {
+    display:flex;
+    justify-content: center;
   }
     
   /* HERO */
@@ -61,26 +71,108 @@
   
   /* SECTIONS */
   section {
-    scroll-margin-top: 90px;
-    padding: 120px 80px;
+    position: relative;
+    min-height: 100vh;
+  padding: 120px 20px 80px;
+  text-align: center;
+  overflow: hidden;
   }
 
   section:not(.hero):not(.page-hero)::before {
     content: "";
     display: block;
-    width: 60px;
-    height: 2px;
-    background: rgba(255,255,255,0.15);
-    margin-bottom: 40px;
+    width: 50px;
+    height: 12px;
+    background: rgba(3, 0, 0, 0.15);
+    margin-bottom: 240px;
   }
   
   
   
   
-  .about h2 {
-    font-size: 3rem;
-    margin-bottom: 20px;
+ .about-modern {
+  min-height: 60vh;
+  background: url('assets/images/about-bg.jpg') center/cover no-repeat;
+  color: #fff;
+}
+
+.about-modern-overlay {
+  min-height: 0vh;  
+  background: linear-gradient(
+    to right,
+    rgba(0,0,0,0.85),
+    rgba(0,0,0,0.55)
+  );
+  padding: 120px 20px;
+  display: inline-flex
+  align-items: center;
+}
+
+.about-modern-container {
+  max-width: 1200px;
+  margin: auto;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 120px;
+}
+
+/* LEFT */
+.about-tag {
+  color: #f44336;
+  letter-spacing: 6px;
+  font-size: 24px;
+  text-transform: uppercase;
+}
+
+.about-left h2 {
+  font-size: 4.5rem;
+  margin: 15% 0;
+  line-height: 1.2;
+    padding-right: 80px;   /* space pushing away from right column */
+}
+
+.about-line {
+  width: 80px;
+  height: 3px;
+  background: #f44336;
+  margin: 30px 0;
+}
+
+.about-features {
+  list-style: none;
+  padding: 10;
+}
+
+.about-features li {
+  font-size: 1.55rem;
+  margin-bottom: 10px;
+  opacity: 0.9;
+}
+
+/* RIGHT */
+.about-right p {
+  font-size: 1.65rem;
+  line-height: 1.9;
+  margin-bottom: 15px;
+  opacity: 1.95;
+}
+
+/* RESPONSIVE */
+@media (max-width: 900px) {
+  .about-modern-overlay {
+    padding: 60px 25px;
   }
+
+  .about-modern-container {
+    grid-template-columns: 1fr;
+    gap: 160px;
+  }
+
+  .about-left h2 {
+    font-size: 3.85rem;
+  }
+}
+  
   
   /* SERVICES */
   .services {
@@ -92,7 +184,7 @@
 
 
 .services h1 {
-  margin-bottom: 40px;
+  margin-bottom: 80px;
   font-size: 2.5rem;
   color: #fff;
 }
@@ -272,7 +364,7 @@
 .navbar a {
   color: white;
   text-decoration: none;
-  letter-spacing: 1px;
+  letter-spacing: 2px;
   font-size: 0.9rem;
 }
 
@@ -282,18 +374,34 @@
 
 .about {
     position: relative;
-    background: url("assets/images/about-bg.jpg") center/cover no-repeat;
+    
     color: white;
   }
   
   .about-overlay {
-    background: rgba(0, 0, 0, 0.23);
-    padding: 120px 80px;
+    background: rgba(31, 13, 13, 0.416);
+    padding: 100px 90px;
+    display: flex;
+  justify-content: right;   /* centers horizontally */
   }
   
   .about-content {
-    max-width: 500px;
+    max-width: 600px;
+    width: 100%;
   }
+  .about-subtitle {
+  text-transform: uppercase;
+  letter-spacing: 5px;
+  font-size: 24px;
+  color: #f44336;
+  margin-bottom: 10px;
+}
+
+.about p {
+  font-size: 1.15rem;
+  line-height: 1.8;
+  opacity: 0.95;
+}
   
   .about h2 {
     font-size: 3rem;
@@ -305,8 +413,8 @@
     padding: 0;
   }
   
-  .about-points li {
-    font-size: 1.4rem;
+  .about-points p {
+    font-size: 2.4rem;
     margin-bottom: 15px;
     letter-spacing: 0.5px;
   }
@@ -338,6 +446,21 @@
       grid-template-columns: repeat(2, 1fr);
     }
   }
+  @media (max-width: 768px) {
+  .about {
+    min-height: auto;
+  }
+
+  .about-overlay {
+    padding: 80px 25px;
+    background: rgba(0, 0, 0, 0.75);
+  }
+
+  .about h2 {
+    font-size: 2.2rem;
+  }
+}
+
 
   @media (max-width: 768px) {
  /* Adjust services section padding */
