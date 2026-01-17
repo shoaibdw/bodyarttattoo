@@ -54,7 +54,7 @@
     position: relative;
     height: 100vh;
     padding: 0;
-    background-image: url("assets/images/hero.jpg");
+    background-image: url("assets/images/hero.png");
     background-size: cover;
     background-position: center;
     background-repeat: no-repeat;
@@ -92,7 +92,7 @@
   section:not(.hero):not(.page-hero)::before {
     content: "";
 
-    width: 50px;
+    width: 60px;
     height: 12px;
     background: rgba(3, 0, 0, 0.15);
     margin-bottom: 0px;
@@ -104,7 +104,7 @@
  .about-modern {
    min-height: 100vh;
   padding: 120px 20px 80px;
-  background: url('assets/images/about-bg.jpg') center/cover no-repeat;
+  background: url('assets/images/about-bg.jpeg') center/cover no-repeat;
   color: #fff;
 }
 
@@ -115,7 +115,7 @@
     rgba(0,0,0,0.85),
     rgba(0,0,0,0.55)
   );
-  padding: 120px 20px;
+  padding: 110px 20px;
   display: inline-flex
 }
 
@@ -192,15 +192,15 @@
   /* SERVICES */
   .services {
   background: #4dbaa1;
-  padding: 60px 10%;
+  padding: 300px 10%;
   text-align: center;
    background: url("assets/images/services-bg.jpg") center/cover no-repeat;
 }
 
 
 .services h1 {
-  margin-bottom: 380px;
-  font-size: 2.5rem;
+  margin-bottom: 180px;
+  font-size: 3.5rem;
   color: #fff;
 }
 
@@ -451,11 +451,11 @@
 
 /* CARD */
 .service-box {
-  width: 300px;
-  height: 480px;
+  width: 500px;
+  height: 780px;
   flex-shrink: 0;
   margin-right: 30px;
-  border-radius: 18px;
+  border-radius: 0px;
   overflow: hidden;
   position: relative;
 }
@@ -515,7 +515,6 @@
 
 .about {
     position: relative;
-    
     color: white;
   }
   
@@ -714,10 +713,10 @@
 
   /* card size */
   .service-box {
-    width: 220px;
-    height: 340px;
-    margin-right: 16px;
-    border-radius: 16px;
+    width: 420px;
+    height: 740px;
+    margin-right: 26px;
+    border-radius: 24px;
   }
 
   /* text size */
