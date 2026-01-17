@@ -15,6 +15,14 @@
   <link href="https://unpkg.com/aos@2.3.4/dist/aos.css" rel="stylesheet">
 </head>
 <script>
+  function toggleCard(card) {
+    document.querySelectorAll(".card").forEach(c => {
+      if (c !== card) c.classList.remove("active");
+    });
+    card.classList.toggle("active");
+  }
+</script>
+<script>
     if (window.location.hash) {
       window.location.hash = "#home";
     }
@@ -25,8 +33,8 @@
         <a href="#home" class="active">Home</a>
         <a href="#about">About</a>
         <a href="#services">Services</a>
-        <a href="#artists">Artists</a>
         <a href="#gallery">Gallery</a>
+        <a href="#training">Training</a>
         <a href="#contact">Contact</a>
       </nav>
       
@@ -89,28 +97,93 @@
 </section>
 
 
-  <!-- SERVICES -->
  <!-- SERVICES -->
-<section class="services" data-aos="fade-up" id="services">
+<section class="services" data-aos="fade-up"  id="services">
   <h1>Our Services</h1>
 
+  <div class="services-content">
   <div class="services-container">
-    <div class="card tattoo" data-aos="fade-up" data-aos-delay="0">Tattoo</div>
-    <div class="card piercing" data-aos="fade-up" data-aos-delay="100">Piercing</div>
-    <div class="card nail" data-aos="fade-up" data-aos-delay="200">Nails</div>
-    <div class="card training" data-aos="fade-up" data-aos-delay="300">Training</div>
+     <div class="card tattoo" data-aos="fade-up" data-aos-delay="0" onclick="toggleCard(this)">
+  <div class="card-header">
+    <span class="title">Tattoo</span>
+    <span class="plus">+</span>
   </div>
-  
+
+  <div class="card-panel">
+    <img src="assets/images/protrait-bg.jpg" alt="Tattoo Service" />
+    <ul class="card-panel-features">
+          <li><h3>Line Art Tattoos</h3></li>
+          <li><h3>Realistic Tattoos</h3></li>
+          <li><h3>Cover Up Tattoos</h3></li>
+          <li><h3>Geometric Tattoos</h3></li>
+          <li><h3>Religious Tattoos</h3></li>
+          <li><h3>Script Tattoos</h3></li>
+          <li><h3>Protrait Tattoos</h3></li>
+        </ul>
+  </div>
+  </div>
+   <div class="card piercing" data-aos="fade-up" data-aos-delay="100" onclick="toggleCard(this)">
+  <div class="card-header">
+    <span class="title">Piercing</span>
+    <span class="plus">+</span>
+  </div>
+
+  <div class="card-panel">
+    <img src="assets/images/t-piercing.png" alt="Tattoo Service" />
+    <ul>
+      <h3>Piercings (Body & Jewelry)</h3>
+      <li>Ear</li>
+      <li>Nose</li>
+      <li>Navel</li>
+    </ul>
+  </div>
+  </div>
+   <div class="card nails" data-aos="fade-up" data-aos-delay="200"onclick="toggleCard(this)">
+  <div class="card-header">
+    <span class="title">Nails</span>
+    <span class="plus">+</span>
+  </div>
+
+  <div class="card-panel">
+    <img src="assets/images/t-nails.png" alt="Tattoo Service" />
+    <ul>
+      <h3>Nail Art</h3>
+      <li>Russian Manicure</li>
+      <li>Advanced Shaping</li>
+      <li>Nail Art and Nail Extensions</li>
+    </ul>
+  </div>
+  </div>
+
+   <div class="card training" data-aos="fade-up" data-aos-delay="300" onclick="toggleCard(this)">
+  <div class="card-header">
+    <span class="title">Training</span>
+    <span class="plus">+</span>
+  </div>
+
+  <div class="card-panel">
+    <img src="assets/images/tatto-bg.png" alt="Tattoo Service" />
+    <ul>
+      <h3>Become A Pro Tattoo ARTIST</h3>
+      <li>2 Months Basic Course</li>
+      <li>4 Months Advance Course</li>
+      <li>6 Months Complete Course</li>
+    </ul>
+  </div>
+  </div>
+  </div>
+</div>
 </section>
 
 
 
-  <section class="service-list" id="artists">
+<section class="service-list" id="gallery">
+   <h1>Our Services</h1>
   <div class="service-track">
 
     <div class="service-box">
       <img src="assets/images/t4.jpg">
-      <div class="label">IRONBUZZ</div>
+      <div class="label">BODY ART TATTOOZ</div>
     </div>
 
     <div class="service-box">
@@ -145,12 +218,22 @@
     </div>
 
     <div class="service-box">
-      <img src="assets/images/t8.jpg">
+      <img src="assets/images/t-11.png">
       <div class="label">BODY ART TATTOOZ</div>
     </div>
 
     <div class="service-box">
-      <img src="assets/images/t7.jpg">
+      <img src="assets/images/t-12.png">
+      <div class="label">BODY ART TATTOOZ</div>
+    </div>
+
+    <div class="service-box">
+      <img src="assets/images/t-13.png">
+      <div class="label">BODY ART TATTOOZ</div>
+    </div>
+
+    <div class="service-box">
+      <img src="assets/images/t-14.png">
       <div class="label">BODY ART TATTOOZ</div>
     </div>
 
@@ -159,7 +242,7 @@
 
 
 
-<section class="service-list" id="gallery">
+<section class="service-list" id="training">
   <div class="service-track">
 
     <div class="service-column">
@@ -190,5 +273,29 @@
   <script src="script.js"></script>
   <script src="https://unpkg.com/aos@2.3.4/dist/aos.js"></script>
   <script src="https://unpkg.com/gsap@3/dist/gsap.min.js"></script>
+  <script>
+let lastScrollY = window.scrollY;
+const navbar = document.querySelector(".navbar");
+
+/* Hide navbar on link click */
+document.querySelectorAll(".navbar a").forEach(link => {
+  link.addEventListener("click", () => {
+    navbar.classList.add("nav-hidden");
+  });
+});
+
+/* Show / hide navbar on scroll */
+window.addEventListener("scroll", () => {
+  if (window.scrollY > lastScrollY) {
+    // scrolling down
+    navbar.classList.add("nav-hidden");
+  } else {
+    // scrolling up
+    navbar.classList.remove("nav-hidden");
+  }
+  lastScrollY = window.scrollY;
+});
+</script>
+
 </body>
 </html>
