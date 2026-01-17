@@ -65,7 +65,7 @@
   .hero p {
     margin-top: 10px;
     font-size: 1.2rem;
-    opacity: 0.8;
+    opacity: 1.;
     letter-spacing: 1px;
   }
   
@@ -630,7 +630,7 @@
    
      .hero-content {
           justify-content: flex-start;   /* move content up */
-          padding-top: 150px;            /* space from top */
+          padding-top: 238px;            /* space from top */
         }
 
       
@@ -749,6 +749,99 @@
     }
   }
     
+/* BOOK NOW BUTTON */
+.book-btn {
+  margin-left: 20px;
+  padding: 8px 18px;
+  background: rgba(255,255,255,0.15);
+  border: 1px solid rgba(255,255,255,0.3);
+  color: #fff;
+  font-family: 'Inter', sans-serif;
+  border-radius: 30px;
+  cursor: pointer;
+  backdrop-filter: blur(10px);
+  transition: all 0.3s ease;
+}
+
+.book-btn:hover {
+  background: rgba(255,255,255,0.25);
+}
+
+/* MODAL BACKDROP */
+.booking-modal {
+  position: fixed;
+  inset: 0;
+  background: rgba(0,0,0,0.7);
+  display: none;
+  justify-content: center;
+  align-items: center;
+  z-index: 999;
+}
+
+/* GLASS BOX */
+.booking-box {
+  width: 90%;
+  max-width: 420px;
+  padding: 30px;
+  border-radius: 20px;
+  background: rgba(255,255,255,0.1);
+  backdrop-filter: blur(15px);
+  border: 1px solid rgba(255,255,255,0.25);
+  color: #fff;
+  position: relative;
+  animation: fadeUp 0.4s ease;
+}
+
+.booking-box h2 {
+  text-align: center;
+  margin-bottom: 20px;
+  font-family: 'Playfair Display', serif;
+}
+
+/* INPUTS */
+.booking-box input,
+.booking-box textarea {
+  width: 100%;
+  margin-bottom: 15px;
+  padding: 12px;
+  background: rgba(0,0,0,0.5);
+  border: 1px solid rgba(255,255,255,0.2);
+  border-radius: 10px;
+  color: #fff;
+  outline: none;
+}
+
+.booking-box textarea {
+  resize: none;
+  height: 90px;
+}
+
+/* SUBMIT BUTTON */
+.booking-box button {
+  width: 100%;
+  padding: 12px;
+  border-radius: 30px;
+  border: none;
+  background: #fff;
+  color: #000;
+  font-weight: 600;
+  cursor: pointer;
+}
+
+/* CLOSE */
+.close-btn {
+  position: absolute;
+  top: 12px;
+  right: 16px;
+  font-size: 24px;
+  cursor: pointer;
+}
+
+/* ANIMATION */
+@keyframes fadeUp {
+  from { transform: translateY(40px); opacity: 0; }
+  to { transform: translateY(0); opacity: 1; }
+}
 
 
   
